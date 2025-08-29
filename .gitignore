@@ -1,0 +1,6 @@
+minio/mnt/**/.minio.sys/tmp/
+minio/mnt/**/.minio.sys/
+minio/mnt/drive-4/.minio.sys/tmp/
+minio/mnt/drive-2/.minio.sys/tmp/
+minio/mnt/drive-1/.minio.sys/tmp/
+minio/mnt/drive-3/.minio.sys/tmp/
