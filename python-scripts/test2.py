@@ -2,22 +2,44 @@ import polars as ps
 import io
 from minio import Minio
 from minio.error import S3Error
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
 
 
-accounts = ps.read_csv("/home/rafael/Documents/banksphere/minio/data/Accounts.csv")
+current_dir = os.getcwd()
+
+parent_dir = os.path.abspath(os.path.join(current_dir, ".."))
+
+data_dir = os.path.join(parent_dir, "data/")
+
+extensions = (".csv", ".parquet", ".xlsx")
+
+files_dict = {}
+
+for files in os.listdir(data_dir):
+    if files.endswith(extensions):
+        object_name = os.path.splitext(files)[0]  
+        full_path = os.path.join(parent_dir, files)
+        files_dict[object_name] = full_path
+
+
+file = ps.read_csv(full_path)
 bucket_name = "bronz"
-object_name = "accounts"
 
-def main():
+
+def main(bucket_name,object_name,full_path):
     client = Minio(
-        endpoint = "localhost:9000",
-        access_key = "minioadmin",
-        secret_key = "minioadmin",
+        endpoint = ENDPOINT,
+        access_key = ACCESS_KEY,
+        secret_key = SECRET_KEY,
         secure = False
     )
+    file = ps.read_csv(full_path)
 
     buffer = io.BytesIO()
-    accounts.write_parquet(buffer)
+    file.write_parquet(buffer)
     buffer.seek(0)
 
     
@@ -42,6 +64,7 @@ def main():
 
 if __name__ == "__main__":
     try:
-        main()
+        for object_name,full_path in files_dict.items():
+            main(bucket_name,object_name,full_path)
     except S3Error as exc:
         print("error occurred.", exc)
