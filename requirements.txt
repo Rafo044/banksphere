@@ -1,3 +1,4 @@
 polars
 minio
 dotenv
+openpyxl
