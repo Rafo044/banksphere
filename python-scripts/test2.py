@@ -11,8 +11,8 @@ ACCESS_KEY = os.getenv("ACCESS_KEY")
 SECRET_KEY = os.getenv("SECRET_KEY")
 extensions = (".csv", ".parquet", ".xlsx")
 
-current_dir = os.getcwd()
-parent_dir = os.path.abspath(os.path.join(current_dir, ".."))
+file_dir = os.path.dirname(os.path.abspath(__file__))
+parent_dir = os.path.abspath(os.path.join(file_dir, ".."))
 data_dir = os.path.join(parent_dir, "data")
 
 
