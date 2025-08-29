@@ -22,7 +22,7 @@ files_dict = {}
 for files in os.listdir(data_dir):
     if files.endswith(extensions):
         object_name = os.path.splitext(files)[0]  
-        full_path = os.path.join(parent_dir, files)
+        full_path = os.path.join(data_dir, files)
         files_dict[object_name] = full_path
 
 
