@@ -6,17 +6,18 @@ from dotenv import load_dotenv
 import os
 
 load_dotenv()
-
-
-current_dir = os.getcwd()
-
-parent_dir = os.path.abspath(os.path.join(current_dir, ".."))
-
-data_dir = os.path.join(parent_dir, "data/")
-
+ENDPOINT = os.getenv("ENDPOINT")
+ACCESS_KEY = os.getenv("ACCESS_KEY")
+SECRET_KEY = os.getenv("SECRET_KEY")
 extensions = (".csv", ".parquet", ".xlsx")
 
+current_dir = os.getcwd()
+parent_dir = os.path.abspath(os.path.join(current_dir, ".."))
+data_dir = os.path.join(parent_dir, "data")
+
+
 files_dict = {}
+
 
 for files in os.listdir(data_dir):
     if files.endswith(extensions):
@@ -25,7 +26,7 @@ for files in os.listdir(data_dir):
         files_dict[object_name] = full_path
 
 
-file = ps.read_csv(full_path)
+
 bucket_name = "bronz"
 
 
@@ -36,7 +37,13 @@ def main(bucket_name,object_name,full_path):
         secret_key = SECRET_KEY,
         secure = False
     )
-    file = ps.read_csv(full_path)
+    if full_path.endswith(".csv"):
+        file = ps.read_csv(full_path)
+    elif full_path.endswith(".parquet"):
+        file = ps.read_parquet(full_path)
+    elif full_path.endswith(".xlsx"):
+        file = ps.read_excel(full_path)
+
 
     buffer = io.BytesIO()
     file.write_parquet(buffer)
@@ -63,8 +70,9 @@ def main(bucket_name,object_name,full_path):
     )
 
 if __name__ == "__main__":
-    try:
-        for object_name,full_path in files_dict.items():
-            main(bucket_name,object_name,full_path)
-    except S3Error as exc:
-        print("error occurred.", exc)
+    for object_name, full_path in files_dict.items():
+        try:
+            main(bucket_name, object_name, full_path)
+        except S3Error as exc:
+            print(f"Error uploading {object_name}: {exc}")
+
