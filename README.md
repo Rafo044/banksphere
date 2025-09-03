@@ -2,7 +2,7 @@
 <<<<<<< HEAD
 ## Data  Pipline 
 
-![Pipline](./docs/image/pipline.png)
+![Pipline](./docs/images/pipline.png)
 
 
 
