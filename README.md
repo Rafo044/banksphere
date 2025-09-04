@@ -1,5 +1,4 @@
 
-<<<<<<< HEAD
 ## Data  Pipline 
 
 ![Pipline](./docs/images/pipline.png)
