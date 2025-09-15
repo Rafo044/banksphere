@@ -13,4 +13,3 @@ SET s3_use_ssl=false
 SET s3_access_key_id={{env_var('MINIO_ROOT_USER')}}
 
 SET s3_secret_access_key={{env_var('MINIO_ROOT_PASSWORD')}}
-

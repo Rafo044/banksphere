@@ -1,0 +1,59 @@
+services:
+  banksphere_minio:
+    image: quay.io/minio/minio
+    container_name: banksphere_minio
+    env_file:
+      - .env
+    command: server /data
+    ports:
+      - "${MINIO_PORT}:9000"
+    volumes:
+      - ./minio:/data
+    networks:
+      - banksphere
+
+  banksphere_citus:
+    image: citusdata/citus:13.0
+    container_name: banksphere_citus
+    env_file:
+      - .env
+    ports:
+      - "${CITUS_PORT}:5432"
+    networks:
+      - banksphere
+
+#  banksphere_dbt:
+#    image: dbt-labs/dbt:1.10.11
+#    container_name: banksphere_dbt
+#    volumes:
+#      - ./dbt_project:/usr/app/dbt_project
+#      - ./duckdb:/usr/app/duckdb
+#      - ./minio:/usr/app/minio # dbt lazım olarsa MinIO fayllarını oxuya bilər
+#    working_dir: /usr/app/dbt_project
+#    env_file:
+#      - .env
+#    networks:
+#      - banksphere
+#    depends_on:
+#      - banksphere_minio
+#      - banksphere_citus
+
+  banksphere_duckdb:
+    image: datacatering/duckdb:v1.3.2
+    container_name: banksphere_duckdb
+    volumes:
+      - ./duckdb:/usr/app/duckdb
+    env_file:
+      - .env
+#    depends_on:
+#      - banksphere_minio
+#      - banksphere_dbt
+    ports: 
+      - "${DUCKDB_PORT}:4213"
+    networks:
+      - banksphere
+      
+
+networks:
+  banksphere:
+    driver: bridge
