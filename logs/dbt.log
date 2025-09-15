@@ -1,0 +1,143 @@
+[0m15:01:49.452567 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7389fd230d70>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7389fe8d60f0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7389fc71bbc0>]}
+[0m15:01:49.457732 [debug] [MainThread]: An error was encountered while trying to send an event
+
+
+============================== 15:01:49.458209 | df9924e9-5877-4089-8b6b-0baf960d1fff ==============================
+[0m15:01:49.458209 [info ] [MainThread]: Running with dbt=1.10.11
+[0m15:01:49.458826 [debug] [MainThread]: running dbt with arguments {'empty': 'None', 'use_colors': 'True', 'log_cache_events': 'False', 'profiles_dir': '/home/rafael/.dbt', 'fail_fast': 'False', 'version_check': 'True', 'introspect': 'True', 'use_experimental_parser': 'False', 'send_anonymous_usage_stats': 'True', 'cache_selected_only': 'False', 'target_path': 'None', 'debug': 'False', 'no_print': 'None', 'log_format': 'default', 'write_json': 'True', 'static_parser': 'True', 'log_path': 'logs', 'printer_width': '80', 'quiet': 'False', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'invocation_command': 'dbt init dbt', 'indirect_selection': 'eager', 'warn_error': 'None', 'partial_parse': 'True'}
+[0m15:03:16.099046 [error] [MainThread]: Encountered an error:
+
+[0m15:03:16.105009 [error] [MainThread]: Traceback (most recent call last):
+  File "/home/rafael/Documents/dbt/lib/python3.12/site-packages/dbt/cli/requires.py", line 178, in wrapper
+    result, success = func(*args, **kwargs)
+                      ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/rafael/Documents/dbt/lib/python3.12/site-packages/dbt/cli/requires.py", line 128, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/rafael/Documents/dbt/lib/python3.12/site-packages/dbt/cli/main.py", line 483, in init
+    results = task.run()
+              ^^^^^^^^^^
+  File "/home/rafael/Documents/dbt/lib/python3.12/site-packages/dbt/task/init.py", line 324, in run
+    project_name = self.get_valid_project_name()
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/rafael/Documents/dbt/lib/python3.12/site-packages/dbt/task/init.py", line 278, in get_valid_project_name
+    name = click.prompt("Enter a name for your project (letters, digits, underscore)")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/rafael/Documents/dbt/lib/python3.12/site-packages/click/termui.py", line 168, in prompt
+    value = prompt_func(prompt)
+            ^^^^^^^^^^^^^^^^^^^
+  File "/home/rafael/Documents/dbt/lib/python3.12/site-packages/click/termui.py", line 151, in prompt_func
+    raise Abort() from None
+click.exceptions.Abort
+
+[0m15:03:16.108149 [debug] [MainThread]: Resource report: {"command_name": "init", "command_success": false, "command_wall_clock_time": 86.72307, "process_in_blocks": "48016", "process_kernel_time": 0.17302, "process_mem_max_rss": "98484", "process_out_blocks": "56", "process_user_time": 1.607442}
+[0m15:03:16.109366 [debug] [MainThread]: Command `dbt init` failed at 15:03:16.109115 after 86.72 seconds
+[0m15:03:16.110270 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7389fc7b6630>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7389fbe57260>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7389fcce3980>]}
+[0m15:03:16.110953 [debug] [MainThread]: An error was encountered while trying to send an event
+[0m15:03:16.111538 [debug] [MainThread]: Flushing usage events
+[0m15:03:28.175952 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d94f7e2bbc0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d94f9bab8f0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d94f81b26f0>]}
+[0m15:03:28.179183 [debug] [MainThread]: An error was encountered while trying to send an event
+
+
+============================== 15:03:28.179647 | 08245784-d7fa-4681-9ee9-52827e7ffb34 ==============================
+[0m15:03:28.179647 [info ] [MainThread]: Running with dbt=1.10.11
+[0m15:03:28.180286 [debug] [MainThread]: running dbt with arguments {'indirect_selection': 'eager', 'partial_parse': 'True', 'debug': 'False', 'invocation_command': 'dbt init dbt_transformation/', 'target_path': 'None', 'log_path': 'logs', 'log_format': 'default', 'warn_error': 'None', 'log_cache_events': 'False', 'cache_selected_only': 'False', 'quiet': 'False', 'send_anonymous_usage_stats': 'True', 'use_colors': 'True', 'fail_fast': 'False', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'version_check': 'True', 'profiles_dir': '/home/rafael/.dbt', 'write_json': 'True', 'empty': 'None', 'no_print': 'None', 'static_parser': 'True', 'introspect': 'True', 'printer_width': '80', 'use_experimental_parser': 'False'}
+[0m15:03:37.902351 [error] [MainThread]: Encountered an error:
+
+[0m15:03:37.906666 [error] [MainThread]: Traceback (most recent call last):
+  File "/home/rafael/Documents/dbt/lib/python3.12/site-packages/dbt/cli/requires.py", line 178, in wrapper
+    result, success = func(*args, **kwargs)
+                      ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/rafael/Documents/dbt/lib/python3.12/site-packages/dbt/cli/requires.py", line 128, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/rafael/Documents/dbt/lib/python3.12/site-packages/dbt/cli/main.py", line 483, in init
+    results = task.run()
+              ^^^^^^^^^^
+  File "/home/rafael/Documents/dbt/lib/python3.12/site-packages/dbt/task/init.py", line 324, in run
+    project_name = self.get_valid_project_name()
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/rafael/Documents/dbt/lib/python3.12/site-packages/dbt/task/init.py", line 278, in get_valid_project_name
+    name = click.prompt("Enter a name for your project (letters, digits, underscore)")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/rafael/Documents/dbt/lib/python3.12/site-packages/click/termui.py", line 168, in prompt
+    value = prompt_func(prompt)
+            ^^^^^^^^^^^^^^^^^^^
+  File "/home/rafael/Documents/dbt/lib/python3.12/site-packages/click/termui.py", line 151, in prompt_func
+    raise Abort() from None
+click.exceptions.Abort
+
+[0m15:03:37.909385 [debug] [MainThread]: Resource report: {"command_name": "init", "command_success": false, "command_wall_clock_time": 9.795729, "process_in_blocks": "0", "process_kernel_time": 0.113475, "process_mem_max_rss": "98616", "process_out_blocks": "24", "process_user_time": 1.53048}
+[0m15:03:37.910989 [debug] [MainThread]: Command `dbt init` failed at 15:03:37.910650 after 9.80 seconds
+[0m15:03:37.912349 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d94f8771bb0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d94f88e76b0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d94f7e2bbc0>]}
+[0m15:03:37.913435 [debug] [MainThread]: An error was encountered while trying to send an event
+[0m15:03:37.914200 [debug] [MainThread]: Flushing usage events
+[0m15:03:46.738094 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d83be90f9b0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d83be0f63f0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d83bdcf8fb0>]}
+[0m15:03:46.741266 [debug] [MainThread]: An error was encountered while trying to send an event
+
+
+============================== 15:03:46.742703 | aa6b877f-8ff2-4b10-b485-d9e8eed12d42 ==============================
+[0m15:03:46.742703 [info ] [MainThread]: Running with dbt=1.10.11
+[0m15:03:46.743394 [debug] [MainThread]: running dbt with arguments {'log_path': 'logs', 'introspect': 'True', 'fail_fast': 'False', 'use_colors': 'True', 'log_cache_events': 'False', 'log_format': 'default', 'invocation_command': 'dbt init dbt_transformation', 'profiles_dir': '/home/rafael/.dbt', 'no_print': 'None', 'write_json': 'True', 'debug': 'False', 'indirect_selection': 'eager', 'cache_selected_only': 'False', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'empty': 'None', 'version_check': 'True', 'target_path': 'None', 'use_experimental_parser': 'False', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'static_parser': 'True', 'printer_width': '80', 'partial_parse': 'True'}
+[0m15:03:46.753342 [info ] [MainThread]: A project called dbt_transformation already exists here.
+[0m15:03:46.754429 [debug] [MainThread]: Resource report: {"command_name": "init", "command_success": true, "command_wall_clock_time": 0.07333341, "process_in_blocks": "0", "process_kernel_time": 0.119653, "process_mem_max_rss": "98428", "process_out_blocks": "16", "process_user_time": 1.409913}
+[0m15:03:46.755093 [debug] [MainThread]: Command `dbt init` succeeded at 15:03:46.754973 after 0.07 seconds
+[0m15:03:46.755586 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d83c236be30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d83be7eaed0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d83be7ea5d0>]}
+[0m15:03:46.756154 [debug] [MainThread]: An error was encountered while trying to send an event
+[0m15:03:46.756651 [debug] [MainThread]: Flushing usage events
+[0m15:04:06.645681 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x70e80788a030>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x70e807792330>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x70e8097c15e0>]}
+[0m15:04:06.648937 [debug] [MainThread]: An error was encountered while trying to send an event
+
+
+============================== 15:04:06.649418 | b48dcbff-4b04-4eea-81bc-3e48552b901d ==============================
+[0m15:04:06.649418 [info ] [MainThread]: Running with dbt=1.10.11
+[0m15:04:06.650054 [debug] [MainThread]: running dbt with arguments {'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'write_json': 'True', 'fail_fast': 'False', 'debug': 'False', 'indirect_selection': 'eager', 'partial_parse': 'True', 'target_path': 'None', 'empty': 'None', 'cache_selected_only': 'False', 'quiet': 'False', 'send_anonymous_usage_stats': 'True', 'static_parser': 'True', 'use_colors': 'True', 'warn_error': 'None', 'introspect': 'True', 'printer_width': '80', 'use_experimental_parser': 'False', 'invocation_command': 'dbt init dbt_transformation/', 'version_check': 'True', 'profiles_dir': '/home/rafael/.dbt', 'log_cache_events': 'False', 'no_print': 'None', 'log_path': 'logs', 'log_format': 'default'}
+[0m15:04:15.361690 [info ] [MainThread]: A project called dbt_transformation already exists here.
+[0m15:04:15.364512 [debug] [MainThread]: Resource report: {"command_name": "init", "command_success": true, "command_wall_clock_time": 8.779067, "process_in_blocks": "0", "process_kernel_time": 0.114706, "process_mem_max_rss": "98356", "process_out_blocks": "16", "process_user_time": 1.432659}
+[0m15:04:15.366259 [debug] [MainThread]: Command `dbt init` succeeded at 15:04:15.365971 after 8.78 seconds
+[0m15:04:15.367468 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x70e80741dd60>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x70e808dbc350>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x70e8097c15e0>]}
+[0m15:04:15.368241 [debug] [MainThread]: An error was encountered while trying to send an event
+[0m15:04:15.368954 [debug] [MainThread]: Flushing usage events
+[0m15:10:43.714144 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7b8145011af0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7b81462c33b0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7b81449fbbc0>]}
+[0m15:10:43.717363 [debug] [MainThread]: An error was encountered while trying to send an event
+
+
+============================== 15:10:43.717823 | 97e4ba71-e962-46df-bdf3-f4c2f02dbea3 ==============================
+[0m15:10:43.717823 [info ] [MainThread]: Running with dbt=1.10.11
+[0m15:10:43.718377 [debug] [MainThread]: running dbt with arguments {'invocation_command': 'dbt init dbt_transformation', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'log_cache_events': 'False', 'static_parser': 'True', 'use_experimental_parser': 'False', 'log_format': 'default', 'version_check': 'True', 'write_json': 'True', 'send_anonymous_usage_stats': 'True', 'empty': 'None', 'log_path': 'logs', 'cache_selected_only': 'False', 'quiet': 'False', 'warn_error': 'None', 'introspect': 'True', 'printer_width': '80', 'indirect_selection': 'eager', 'use_colors': 'True', 'partial_parse': 'True', 'profiles_dir': '/home/rafael/.dbt', 'no_print': 'None', 'debug': 'False', 'fail_fast': 'False', 'target_path': 'None'}
+[0m15:10:43.731178 [info ] [MainThread]: A project called dbt_transformation already exists here.
+[0m15:10:43.732522 [debug] [MainThread]: Resource report: {"command_name": "init", "command_success": true, "command_wall_clock_time": 0.08245087, "process_in_blocks": "32", "process_kernel_time": 0.131614, "process_mem_max_rss": "98108", "process_out_blocks": "32", "process_user_time": 1.583365}
+[0m15:10:43.733433 [debug] [MainThread]: Command `dbt init` succeeded at 15:10:43.733273 after 0.08 seconds
+[0m15:10:43.734166 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7b8144d2a0f0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7b8144bf5b50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7b81444c3f80>]}
+[0m15:10:43.735216 [debug] [MainThread]: An error was encountered while trying to send an event
+[0m15:10:43.735729 [debug] [MainThread]: Flushing usage events
+[0m15:13:55.975432 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fa8cb87b620>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fa8cbfa4110>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fa8cb87a8a0>]}
+[0m15:13:55.978549 [debug] [MainThread]: An error was encountered while trying to send an event
+
+
+============================== 15:13:55.979013 | 5ecfa46c-9cfb-4895-8889-c96689368450 ==============================
+[0m15:13:55.979013 [info ] [MainThread]: Running with dbt=1.10.11
+[0m15:13:55.979595 [debug] [MainThread]: running dbt with arguments {'use_colors': 'True', 'log_path': 'logs', 'introspect': 'True', 'indirect_selection': 'eager', 'profiles_dir': '/home/rafael/.dbt', 'send_anonymous_usage_stats': 'True', 'warn_error': 'None', 'target_path': 'None', 'debug': 'False', 'printer_width': '80', 'cache_selected_only': 'False', 'write_json': 'True', 'log_format': 'default', 'version_check': 'True', 'empty': 'None', 'quiet': 'False', 'fail_fast': 'False', 'static_parser': 'True', 'partial_parse': 'True', 'invocation_command': 'dbt init dbt', 'use_experimental_parser': 'False', 'log_cache_events': 'False', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'no_print': 'None'}
+[0m15:14:11.860528 [debug] [MainThread]: Starter project path: /home/rafael/Documents/dbt/lib/python3.12/site-packages/dbt/include/starter_project
+[0m15:14:11.871245 [info ] [MainThread]: 
+Your new dbt project "dbt_transformation" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m15:14:11.872572 [info ] [MainThread]: Setting up your profile.
+[0m15:14:19.189555 [debug] [MainThread]: Resource report: {"command_name": "init", "command_success": true, "command_wall_clock_time": 23.270895, "process_in_blocks": "27800", "process_kernel_time": 0.135405, "process_mem_max_rss": "112092", "process_out_blocks": "384", "process_user_time": 1.604949}
+[0m15:14:19.190516 [debug] [MainThread]: Command `dbt init` succeeded at 15:14:19.190371 after 23.27 seconds
+[0m15:14:19.191084 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fa8cbfa4110>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fa8cb379fd0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fa8cc8a0dd0>]}
+[0m15:14:19.191467 [debug] [MainThread]: An error was encountered while trying to send an event
+[0m15:14:19.191814 [debug] [MainThread]: Flushing usage events
