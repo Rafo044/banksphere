@@ -1,0 +1,9 @@
+version: 2
+
+sources:
+  - name: accounts
+    tables:
+      - name: account
+        identifier: raw_account
+      - name: customer
+        identifier: raw_customer
