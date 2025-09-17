@@ -2,6 +2,7 @@ version: 2
 
 sources:
   - name: raw
+    schema: main
     tables:
       - name: accounts
       - name: accstatus
@@ -16,3 +17,6 @@ sources:
       - name: addrestypes
       - name: address
       - name: acctypes
+      - name: transactiontypes
+      - name: transactions
+      - name: persons
