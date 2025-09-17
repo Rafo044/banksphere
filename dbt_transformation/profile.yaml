@@ -3,5 +3,5 @@ dbt_transformation:
   outputs:
     dev:
       type: duckdb
-      path: ./duckdb/databasedbt.duckdb
+      path: ./duckdb/bank.duckdb
       threads: 1

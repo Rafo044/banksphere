@@ -1,9 +1,18 @@
 version: 2
 
 sources:
-  - name: accounts
+  - name: raw
     tables:
-      - name: account
-        identifier: raw_account
-      - name: customer
-        identifier: raw_customer
+      - name: accounts
+      - name: accstatus
+      - name: loanstatus
+      - name: loans
+      - name: loanpayments
+      - name: emposition
+      - name: employee
+      - name: customtypes
+      - name: customers
+      - name: branches
+      - name: addrestypes
+      - name: address
+      - name: acctypes
