@@ -1,0 +1,8 @@
+dbt_transformation:
+  outputs:
+    bank:
+      type: duckdb
+      path: /home/rafael/Documents/banksphere/dbt_transformation/duckdb/bank.duckdb
+      schema: main
+      threads: 1
+  target: bank

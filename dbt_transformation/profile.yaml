@@ -1,7 +1,0 @@
-dbt_transformation:
-  target: dev
-  outputs:
-    dev:
-      type: duckdb
-      path: ./duckdb/databasedbt.duckdb
-      threads: 1
