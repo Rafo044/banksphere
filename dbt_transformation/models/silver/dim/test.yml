@@ -1,0 +1,12 @@
+version: 2
+
+models:
+  - name: dim_account
+    description: Dimension table for accounts
+    columns:
+      - name: account_id
+        description: Unique identifier for the account
+        data_type: integer
+        tests:
+          - not_null
+          - unique
