@@ -4,8 +4,6 @@
 ![Pipline](./docs/images/pipline.png)
 
 
-
-
 ## Table informations 
 
 ```markdown
