@@ -2,11 +2,20 @@ version: 2
 
 models:
   - name: dim_account
-    description: Dimension table for accounts
+    description: "{{ doc('docs_account') }}"
     columns:
       - name: account_id
-        description: Unique identifier for the account
+        description: Account ID tests.
         data_type: integer
+        tests:
+          - not_null
+          - unique
+          - dbt_utils.expression_is_true:
+              arguments:
+                expression: " >= 0"
+      - name: account_number
+        description: Account number.
+        data_type: string
         tests:
           - not_null
           - unique
