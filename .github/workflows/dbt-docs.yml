@@ -22,7 +22,7 @@ jobs:
         with:
           python-version: '3.11'
 
-      - name: Install dbt (example: Duckdb)
+      - name: Install dbt_duckdb
         run: |
           pip install --upgrade pip
           pip install dbt-duckdb
