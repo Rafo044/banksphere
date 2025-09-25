@@ -1,4 +1,0 @@
-polars
-minio
-dotenv
-openpyxl
