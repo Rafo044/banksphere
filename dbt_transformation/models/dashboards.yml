@@ -1,0 +1,20 @@
+version: 2
+
+exposures:
+  - name: dashboard_overview
+    type: dashboard
+    label: Dashboard Overview
+    description: Overview of the dashboard
+    maturity: low
+    tags: [dashboard, overview]
+    url: https://example.com/dashboard/overview
+    owner:
+      name: Rafael Alikhanli
+      email: rafael.alikhanli@example.com
+    depends_on:
+      - ref('dim_account')
+    meta:
+      team: Data Engineering
+      created_at: 2023-01-01
+      updated_at: 2023-01-02
+      status: active
