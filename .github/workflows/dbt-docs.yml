@@ -11,7 +11,7 @@ jobs:
 
     defaults:
       run:
-        working-directory: ./dbt-transformation   # << bütün run komandaları bu qovluqda işləyəcək
+        working-directory: ./dbt_transformation   # << bütün run komandaları bu qovluqda işləyəcək
 
     steps:
       - name: Checkout repo
