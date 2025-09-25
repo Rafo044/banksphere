@@ -1,0 +1,40 @@
+name: Build and Deploy dbt Docs
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-docs:
+    runs-on: ubuntu-latest
+
+    defaults:
+      run:
+        working-directory: ./dbt-transformation   # << bütün run komandaları bu qovluqda işləyəcək
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Install dbt (example: Duckdb)
+        run: |
+          pip install --upgrade pip
+          pip install dbt-duckdb
+
+      - name: Build dbt docs
+        run: |
+          dbt deps
+          dbt compile
+          dbt docs generate
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dbt-transformation/target   # << buradan götürüb gh-pages branch-a qoyur
