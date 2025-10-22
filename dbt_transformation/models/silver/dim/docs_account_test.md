@@ -17,7 +17,7 @@ This is a documentation for the docs_account model.
 - expression > 0 and != 0 and not " "
 - data type
 
-
+## balance
 
 
 {% enddocs %}

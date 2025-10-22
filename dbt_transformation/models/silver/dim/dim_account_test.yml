@@ -2,7 +2,7 @@ version: 2
 
 models:
   - name: dim_account
-    description: "{{ doc('docs_account') }}"
+    description: "{{ doc('docs_account_test') }}"
     columns:
       - name: account_id
         description: Account ID tests.
@@ -24,3 +24,58 @@ models:
           - dbt_utils.expression_is_true:
               arguments:
                 expression: " '^[0-9]{10}$'"
+      - name: balance
+        description: Account balance.
+        data_type: decimal(10,2)
+        tests:
+          - not_null
+          - dbt_utils.expression_is_true:
+              arguments:
+                expression: " >= 0"
+
+      - name: date_opened
+        description: Date account was opened.
+        data_type: date
+        tests:
+          - not_null
+          - dbt_utils.expression_is_true:
+              arguments:
+                expression: " >= '1900-01-01'"
+
+      - name: date_closed
+        description: Date account was closed.
+        data_type: date
+        tests:
+          - not_null
+          - dbt_utils.expression_is_true:
+              arguments:
+                expression: " >= '1900-01-01'"
+
+      - name: account_status
+        description: Account status.
+        data_type: string
+        tests:
+          - not_null
+          - dbt_utils.expression_is_true:
+              arguments:
+                expression: " IN ('active', 'inactive', 'closed')"
+
+      - name: reason
+        description: Reason for account status.
+        data_type: string
+
+      - name: branch_id
+        description: Branch ID.
+        data_type: integer
+        tests:
+          - not_null
+          - unique
+          - dbt_utils.expression_is_true:
+              arguments:
+                expression: " > 0"
+      - name: branch_name
+        description: Branch name.
+        data_type: string
+        tests:
+          - not_null
+          - unique
